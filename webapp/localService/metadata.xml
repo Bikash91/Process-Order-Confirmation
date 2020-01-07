@@ -1,0 +1,21 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:sap="http://www.sap.com/Protocols/SAPData"
+	xmlns:ux="http://www.sap.com/Protocols/OData4SAP/UX" xmlns:gp="http://www.sap.com/Protocols/SAPData/GenericPlayer" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZWMS_UPL_PO_CONFIRMATION_SRV" sap:schema-version="1" xml:lang="en">
+			<EntityType Name="PROCESSORDERCONFIRM" sap:content-version="1">
+				<Key><PropertyRef Name="PROCESSORDER"/><PropertyRef Name="PHASE"/></Key><Property Name="PROCESSORDER" Type="Edm.String" Nullable="false" MaxLength="12" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PHASE" Type="Edm.String" Nullable="false" MaxLength="4" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="CONFIRMATION" Type="Edm.String" Nullable="false" MaxLength="1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="YIELD" Type="Edm.String" Nullable="false" MaxLength="13" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="YUNIT" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="CONFACTIVITY1" Type="Edm.String" Nullable="false" MaxLength="13" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CON1UNIT" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="CONFACTIVITY2" Type="Edm.String" Nullable="false" MaxLength="13" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CON2UNIT" Type="Edm.String" Nullable="false" MaxLength="3" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZWMS_UPL_PO_CONFIRMATION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="PROCESSORDERCONFIRMSet" EntityType="ZWMS_UPL_PO_CONFIRMATION_SRV.PROCESSORDERCONFIRM" sap:content-version="1"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://gwaas-ae7888026.hana.ondemand.com:443/odata/SAP/ZWMS_UPL_PO_CONFIRMATION_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://gwaas-ae7888026.hana.ondemand.com:443/odata/SAP/ZWMS_UPL_PO_CONFIRMATION_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

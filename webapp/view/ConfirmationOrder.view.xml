@@ -1,0 +1,57 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:ci="com.sap.upl.ProcessOrderConfirmation.controller"
+	controllerName="com.sap.upl.ProcessOrderConfirmation.controller.ConfirmationOrder" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>title}" id="page" busy="{settingsModel>/busy}" showHeader="false">
+		<content>
+			<VBox >
+				<f:SimpleForm editable="true" id="idConfirmation" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="3"
+					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+					singleContainerFullSize="false">
+					<f:content>
+						<Label design="Bold" text="{i18n>prcessOrder}" required="true"/>
+						<Input required="true" maxLength='12' name="prcessOrder" id="prcessOrder" value="{confirmationModel>/PROCESSORDER}"
+							placeholder="{i18n>prcessOrder}" change="onChange"/>
+						<Label design="Bold" text="{i18n>phase}" required="true"/>
+						<Input required="true" maxLength='4' name="phase" id="phase" value="{confirmationModel>/PHASE}" placeholder="{i18n>phase}" change="onChange"/>
+						<Label design="Bold" text="{i18n>confirmationType}" required="true"/>
+						<ComboBox items="{settingsModel>/confirmationtype}" placeholder="{i18n>confirmationType}" name="confirmationType" id="confirmationType"
+							change="onChangeConfirmation" required="true" visible="{settingsModel>/visiblerestdata}">
+							<core:Item key="{settingsModel>key}" text="{settingsModel>type}"/>
+						</ComboBox>
+						<Label design="Bold" text="{i18n>yieldtobeconfirmed}" required="true"/>
+						<Input required="true" maxLength='13' name="yieldtobeconfirmed" id="yieldtobeconfirmed" value="{confirmationModel>/YIELD}"
+							placeholder="{i18n>yieldtobeconfirmed}" change="onChangeField" visible="{settingsModel>/visiblerestdata}"/>
+						<Label required="true" design="Bold" text="{i18n>unitOfMeasure}"/>
+						<Input maxLength='3' editable="false" value="{confirmationModel>/YUNIT}" placeholder="{i18n>unitOfMeasure}"
+							visible="{settingsModel>/visiblerestdata}"/>
+						<Label design="Bold" text="{i18n>duratioTime}" required="true"/>
+						<Input required="true" maxLength='13' name="duratioTime" id="duratioTime" value="{confirmationModel>/CONFACTIVITY1}"
+							placeholder="{i18n>duratioTime}" change="onChangeField" visible="{settingsModel>/visiblerestdata}"/>
+						<Label required="true" design="Bold" text="{i18n>unitOfMeasure}"/>
+						<Input maxLength='3' editable="false" value="{confirmationModel>/CON1UNIT}" placeholder="{i18n>unitOfMeasure}"
+							visible="{settingsModel>/visiblerestdata}"/>
+						<Label design="Bold" text="{i18n>overhead}" required="true"/>
+						<Input required="true" maxLength='12' name="overhead" id="overhead" value="{confirmationModel>/CONFACTIVITY2}" placeholder="{i18n>overhead}"
+							change="onChangeField" visible="{settingsModel>/visiblerestdata}"/>
+						<Label required="true" design="Bold" text="{i18n>unitOfMeasure}"/>
+						<Input maxLength='3' editable="false" value="{confirmationModel>/CON2UNIT}" placeholder="{i18n>unitOfMeasure}"
+							visible="{settingsModel>/visiblerestdata}"/>
+						<Label text="{i18n>postingdate}" design="Bold" required="true"/>
+						<!--<DatePicker id="postingDate" change="onChangePostingDate" required="true"
+							value="{path:'confirmationModel>/POSTINGDATE', type:'sap.ui.model.type.Date', formatOptions: { style: 'short'}}"
+							visible="{settingsModel>/visiblerestdata}"/>-->
+						<DatePicker id="postingDate" change="onChangePostingDate" value="{confirmationModel>/POSTINGDATE}"
+							visible="{settingsModel>/visiblerestdata}" class="sapUiSmallMarginBottom" displayFormat="dd.MM.yyyy"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>post}" tooltip="{i18n>post}" enabled="{settingsModel>/enablePost}" press="onPressPost" icon="sap-icon://post"
+					type="Emphasized"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
